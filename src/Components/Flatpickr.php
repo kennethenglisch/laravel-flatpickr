@@ -11,6 +11,7 @@ class Flatpickr extends Component
     public function __construct(
         public array $config = [],
         public string|int|null $id = null,
+        public bool $altInput = true,
         public bool $showTime = false,
         public string $dateFormat = 'Y-m-d',
         public string $timeFormat = 'H:i',
@@ -47,7 +48,7 @@ class Flatpickr extends Component
         return collect([
             'enableTime' => $this->showTime ?: null,
             'dateFormat' => $this->dateFormat(),
-            'altInput' => true,
+            'altInput' => $this->altInput,
             'altFormat' => $this->altFormat ?: $this->dateFormat(),
             'time_24hr' => $this->time24hr(),
             'minDate' => $this->minDate(),
