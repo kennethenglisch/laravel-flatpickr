@@ -204,8 +204,8 @@ class Flatpickr extends Component
                     throw new \Exception("The value must be string when range is set.");
                 }
 
-                if (! Str::contains($this->value, ' to ')) {
-                    throw new \Exception("The two dates must be string and separated by ' to ' in between.");
+                if (! Str::contains($this->value, ' - ')) {
+                    throw new \Exception("The two dates must be string and separated by ' - ' in between.");
                 }
 
                 break;
