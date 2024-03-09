@@ -83,7 +83,11 @@ class Flatpickr extends Component
 
     private function dateFormat(): string
     {
-        return $this->showTime ? "{$this->dateFormat} {$this->timeFormat}" : $this->dateFormat;
+        if($this->showTime) {
+            return $this->dateFormat == "" ? "{$this->timeFormat}" : "{$this->dateFormat} {$this->timeFormat}";
+        }
+
+        return $this->dateFormat;
     }
 
     private function minDate(): ?int
